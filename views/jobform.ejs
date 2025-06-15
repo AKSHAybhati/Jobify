@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/head") %>
+    <title>Post a Job</title>
+  </head>
+  <body>
+    <%- include("./partials/nav") %>
+
+    <div class="container mt-5">
+      <h2 class="mb-4">Post a New Job</h2>
+      <form action="/job/jobform" method="POST">
+        <div class="mb-3">
+          <label for="title" class="form-label">Job Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            name="title"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="company" class="form-label">Company Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="company"
+            name="company"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input
+            type="text"
+            class="form-control"
+            id="location"
+            name="location"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Job Description</label>
+          <textarea
+            class="form-control"
+            id="description"
+            name="description"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+
+        <!-- postedBy and createdAt will be set automatically in backend -->
+
+        <button type="submit" class="btn btn-success">Post Job</button>
+      </form>
+    </div>
+
+    <%- include("./partials/script") %>
+  </body>
+</html>

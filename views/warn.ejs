@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/head") %>
+    <title>Access Denied</title>
+    <style>
+      body {
+        background-color: #d0f1a7;
+        color: #721c24;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .warning-box {
+        background-color: #80dcf3;
+        border: 1px solid #f5a4a9;
+        padding: 2rem 3rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .warning-box h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .warning-box p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .register-btn {
+        display: inline-block;
+        padding: 0.6rem 1.2rem;
+        background-color: #add8e6;
+        color: #003366;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 5px;
+        border: 1px solid #90c5e0;
+        transition: background-color 0.3s ease;
+      }
+
+      .register-btn:hover {
+        background-color: #d2edfa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="warning-box">
+      <h1>Access Denied</h1>
+      <p>Can't see jobs, please <strong>register first</strong>.</p>
+      <a href="/user/signup" class="register-btn">Register</a>
+    </div>
+  </body>
+</html>

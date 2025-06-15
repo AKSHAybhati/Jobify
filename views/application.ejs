@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("./partials/head") %>
+  <title>All Job Applications</title>
+</head>
+<body>
+  <%- include("./partials/nav") %>
+
+  <div class="container mt-5">
+    <h2 class="mb-4">All Job Listings</h2>
+
+    <% if (jobs.length === 0) { %>
+      <p>No jobs posted yet.</p>
+    <% } else { %>
+      <div class="row">
+        <% jobs.forEach(job => { %>
+          <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title"><%= job.title %></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><%= job.company %></h6>
+                <p class="card-text"><%= job.description %></p>
+                <small class="text-muted">Location: <%= job.location %></small>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </div>
+
+  <%- include("./partials/script") %>
+</body>
+</html>
