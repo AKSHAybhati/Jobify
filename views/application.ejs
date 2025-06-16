@@ -3,6 +3,16 @@
 <head>
   <%- include("./partials/head") %>
   <title>All Job Applications</title>
+  <style>
+    .job-link {
+      cursor: pointer;
+      color: #007bff;
+      text-decoration: underline;
+    }
+    .job-link:hover {
+      color: #0056b3;
+    }
+  </style>
 </head>
 <body>
   <%- include("./partials/nav") %>
@@ -18,10 +28,15 @@
           <div class="col-md-4 mb-4">
             <div class="card shadow-sm">
               <div class="card-body">
-                <h5 class="card-title"><%= job.title %></h5>
-                <h6 class="card-subtitle mb-2 text-muted"><%= job.company %></h6>
+                <!-- Job Title Clickable -->
+                <h5 
+                  class="card-title job-link" 
+                  onclick="window.location.href='/job/jobform/<%= job._id %>'"
+                >
+                  <%= job.title %>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">Company - <%= job.company %></h6>
                 <p class="card-text"><%= job.description %></p>
-                <small class="text-muted">Location: <%= job.location %></small>
               </div>
             </div>
           </div>

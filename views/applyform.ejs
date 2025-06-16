@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("./partials/head") %>
+  <title>Apply for <%= job.title %></title>
+</head>
+<body>
+  <%- include("./partials/nav") %>
+
+  <div class="container mt-5">
+    <h2 class="mb-4 text-center">Apply for: <%= job.title %></h2>
+
+    <div class="mb-4">
+      <h5>Company - <%= job.company %></h5>
+      <p><strong>Description:</strong> <%= job.description %></p>
+      <p><strong>Location:</strong> <%= job.location %></p>
+    </div>
+
+    <form action="/job/apply/<%= job._id %>" method="post">
+      <div class="mb-3">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" name="name" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" name="email" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="resume" class="form-label">Resume (Paste Link or Summary)</label>
+        <textarea name="resume" class="form-control" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Application</button>
+    </form>
+  </div>
+
+  <%- include("./partials/script") %>
+</body>
+</html>

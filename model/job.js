@@ -11,7 +11,11 @@ const jobSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now
-  }
+  },
+  resume:{
+    type:String,
+  },
+
 });
 
 module.exports = mongoose.model("job",jobSchema)
