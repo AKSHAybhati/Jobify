@@ -13,7 +13,7 @@ const jobRoute = require("./routes/job.js")
 const cookieparser = require("cookie-parser");
 
 mongoose.connect(process.env.MONGO_URL);
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8001;
 
 app.use(cookieparser());
 app.set("view engine", "ejs");
