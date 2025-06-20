@@ -26,6 +26,6 @@ app.get("/",(req,res) =>{
 app.use("/job",jobRoute)
 app.use("/user",userRoute);
 
-app.listen(process.env.PORT || 8000, () => {
+app.listen(process.env.PORT || 8001, () => {
   console.log("Server started");
 });
